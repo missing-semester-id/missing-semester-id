@@ -1,15 +1,16 @@
 ---
 layout: lecture
-title: "Mengapa kami mengajarkan hal ini"
+title: "Mengapa kami mengajarkan kelas ini"
 # title: "Why we are teaching this class"
 ---
 
 Selama perkuliahan tradisional dari bidang informatika, kamu pasti mengikuti
-banyak kelas yang mengajarkan mu topik-topik lanjutan di bidang informatika,
+banyak kelas yang mengajarkanmu topik-topik lanjutan di bidang informatika,
 mulai dari Sistem Operasi, Bahasa Pemrograman, sampai dengan Machine
 Learning. Akan tetapi, dari sekian topik lanjutan tersebut, ada satu topik
-penting yang jarang dibahas dan sebagai gantinya mahasiswa malah dibiarkan
-untuk mempelajarinya sendiri: Literasi Ekosistem Komputer.
+penting yang jarang dibahas dan sebagai gantinya mahasiswa diberi
+kebebasan untuk mempelajarinya sendiri: literasi mengenai ekosistem
+komputer.
 <!--
 During a traditional Computer Science education, chances are you will take
 plenty of classes that teach you advanced topics within CS, everything from
@@ -19,15 +20,15 @@ left for students to pick up on their own: computing ecosystem literacy.
 -->
 
 Selama bertahun-tahun, kami telah mengajar di beberapa kelas di MIT,
-dan sering sekali kami melihat banyaknya mahasiswa yang memiliki pengetahuan
-yang sedikit tentang tools yang ada. Komputer dibuat untuk mengotomatiskan
-pekerjaan yang bersifat manual, namun seringkali mahasiswa justru
-melakukan pekerjaan manual yang repetitif tersebut ataupun tidak mengandalkan
-tools yang ada seperti version control dan teks editor.Dalam skenario
-terbaik pun, hal ini tetap membuang-buang waktu dan tidak efisien;
-sedangkan untuk skenario terburuknya, hal seperti ini menghasilkan
-masalah seperti kehilangan data ataupun ketidakmampuan untuk menyelesaikan
-pekerjaan tertentu.
+dan sering sekali kami melihat banyaknya mahasiswa yang kurang memahami
+tentang kemampuan sesungguhnya dari tools yang ada di hadapan mereka.
+Komputer dibuat untuk mengotomatiskan pekerjaan yang bersifat manual,
+namun seringkali mahasiswa justru melakukan pekerjaan manual yang
+repetitif tersebut ataupun tidak mengandalkan tools yang ada seperti
+version control dan teks editor. Dalam skenario terbaik pun, hal ini
+tetap membuang-buang waktu dan tidak efisien; sedangkan untuk skenario
+terburuknya, hal seperti ini menghasilkan masalah seperti kehilangan
+data ataupun ketidakmampuan untuk menyelesaikan pekerjaan tertentu.
 <!--
 Over the years, we have helped teach several classes at MIT, and over and over
 we have seen that many students have limited knowledge of the tools available
@@ -42,9 +43,9 @@ Topik-topik berikut ini tidak diajarkan di dalam kurikulum perkuliahan:
 mahasiswa tidak pernah diajarkan untuk menggunakan tools ini, atau
 setidaknya diajarkan cara yang efisien untuk menggunakannya, sehingga
 membuang-buang waktu dan tenaga untuk pekerjaan yang _seharusnya_
-sederhana. Kurikulum standar informatika tidak memiliki topik-topik
-penting tentang ekosistem komputer yang secara signifikan bisa
-mempermudah mahasiswa informatika.
+sederhana. Kurikulum standar perkuliahan informatika tidak memiliki
+topik-topik penting tentang ekosistem komputer yang secara signifikan
+bisa mempermudah mahasiswa informatika.
 <!--
 These topics are not taught as part of the university curriculum: students are
 never shown how to use these tools, or at least not how to use them
@@ -115,13 +116,13 @@ For example, searching through your history quickly can be a huge time saver. In
 ## Version control
 
 Bagaimana cara menggunakan version control _dengan benar_, dan
-memanfaatkannya untuk menyelamatkan mu dari bencana, berkolaborasi
+memanfaatkannya untuk menyelamatkanmu dari bencana, berkolaborasi
 dengan orang lain, dan secara cepat mencari dan memisahkan
 perubahan yang bermasalah. Tidak ada lagi `rm -rf; git clone`.
 Tidak ada lagi merge conflict (setidaknya lebih sedikit). Tidak
-ada lagi blok komentar yang panjang pada code. Tidak ada lagi
-kekhawatiran akan hal yang akan merusak code. Tidak ada lagi 
-"oh tidak, apakah kita menghapus code yang sudah berfungsi ?!".
+ada lagi blok komentar yang panjang pada baris program. Tidak ada lagi
+kekhawatiran akan hal yang akan merusak baris program. Tidak ada lagi
+"oh tidak, apakah kita menghapus baris program yang sudah berfungsi ?!".
 Kami bahkan akan mengajarkan kamu bagaimana caranya untuk
 memberikan kontribusi terhadap proyek orang lain dengan pull request!
 <!--
@@ -148,7 +149,7 @@ In the example below we use `git bisect` to find which commit broke a unit test 
 Bagaimana cara yang efisien untuk mengedit file dari command-line,
 baik secara local maupun remote, dan memanfaatkan fitur lanjutan
 dari text editor. Tidak ada lagi menyalin file kesana kemari.
-Tidak ada lagi editing file yang repetitif.
+Tidak ada lagi mengedit file yang repetitif.
 <!--
 How to efficiently edit files from the command-line, both locally and
 remotely, and take advantage of advanced editor features. No more
@@ -170,7 +171,7 @@ menggunakan SSH keys dan terminal multiplexing. Tidak ada lagi
 membuka banyak terminal hanya untuk menjalankan dua perintah
 secara bersamaan. Tidak ada lagi mengetik password setiap kali
 akan melakukan koneksi. Tidak ada lagi kehilangan semuanya
-hanya karena Internet kamu putus ataupun kamu harus reboot
+hanya karena Internet kamu putus ataupun kamu harus memulai ulang
 laptop kamu.
 <!--
 How to stay sane when working with remote machines using SSH keys and
@@ -196,7 +197,7 @@ In the example below we use `tmux` to keep sessions alive in remote servers and 
 
 Bagaimana cara cepat untuk mencari file yang kamu butuhkan.
 Tidak ada lagi mengklik melalui file di dalam proyek kamu
-sampai kamu menemukan code yang kamu inginkan.
+sampai kamu menemukan baris program yang kamu inginkan.
 <!--
 How to quickly find files that you are looking for. No
 more clicking through files in your project until you find the one
@@ -204,9 +205,9 @@ that has the code you want.
 -->
 
 Pada contoh berikut kita secara cepat mencari file dengan `fd`
-dan untuk code snippets dengan `rg`. Kita juga secara cepat `cd`
-dan `vim` file atau folder yang terbaru atau sering dibuka
-menggunakan `fasd`.
+dan untuk potongan baris program dengan `rg`. Kita juga
+secara cepat `cd` dan `vim` file atau folder yang terbaru
+atau sering dibuka menggunakan `fasd`.
 <!--
 In the example below we quickly look for files with `fd` and for code snippets with `rg`. We also quickly `cd` and `vim` recent/frequent files/folder using `fasd`.
 -->
@@ -220,10 +221,11 @@ In the example below we quickly look for files with `fd` and for code snippets w
 ## Data wrangling
 -->
 
-Bagaimana cara cepat dan mudah untuk mengubah, melihat, parse,
-plot, dan mengkomputasi data dan file langsung dari command-line.
-Tidak ada lagi copy-paste dari log file. Tidak ada lagi komputasi
-statistik yang manual dari data. Tidak ada lagi spreadsheet plotting.
+Bagaimana cara cepat dan mudah untuk mengubah, melihat, mengurai (parse),
+menampilkan (plot), dan mengkomputasi data dan file langsung dari
+command-line. Tidak ada lagi copy-paste dari log file. Tidak ada
+lagi komputasi statistik yang manual dari data. Tidak ada lagi
+spreadsheet plotting.
 <!--
 How to quickly and easily modify, view, parse, plot, and compute over
 data and files directly from the command-line. No more copy pasting
@@ -238,10 +240,10 @@ more spreadsheet plotting.
 
 Bagaimana cara menggunakan mesin virtual untuk mencoba sistem
 operasi yang baru, mengisolasi proyek yang tidak berhubungan,
-dan menjaga mesin utama kamu bersih dan rapi. Tidak ada lagi
-merusak komputer mu secara tidak sengaja selama melakukan
-security lab. Tidak ada lagi jutaan paket acak yang terinstall
-dengan versi yang berbeda-beda.
+dan menjaga mesin utama kamu tetap utuh dan tidak terutak-atik.
+Tidak ada lagi merusak komputermu secara tidak sengaja selama
+melakukan security lab. Tidak ada lagi jutaan paket acak yang
+terinstall dengan versi yang berbeda-beda.
 <!--
 How to use virtual machines to try out new operating systems, isolate
 unrelated projects, and keep your main machine clean and tidy. No
@@ -256,10 +258,10 @@ versions.
 -->
 
 Bagaimana caranya berselancar di Internet tanpa langsung
-mengungkapkan semua rahasia kamu kepada dunia. Tidak ada lagi
-password yang harus berisikan kriteria gila. Tidak ada lagi
-jaringan WiFi terbuka yang tidak aman. Tidak ada lagi
-perpesanan yang tidak terenkripsi.
+mengungkapkan semua rahasia kamu kepada dunia. Tidak usah lagi
+membuat kata sandi (password) yang harus mengikuti kriteria
+yang bermacam-macam. Tidak ada lagi jaringan WiFi terbuka
+yang tidak aman. Tidak ada lagi perpesanan yang tidak terenkripsi.
 
 <!--
 How to be on the Internet without immediately revealing all of your
@@ -273,12 +275,12 @@ more unencrypted messaging.
 # Conclusion
 -->
 
-Contoh-contoh tersebut, dan masih banyak lagi, akan dibahas
+Contoh-contoh di atas, dan masih banyak lagi, akan dibahas
 di 12 kelas perkuliahan, masing-masing termasuk latihan untuk
 kamu supaya kamu semakin terbiasa dengan tools tersebut.
 Kalau kamu tidak bisa menunggu sampai bulan Januari, kamu
 juga bisa melihat-lihat perkuliahan dari [Hacker Tools]
-(https://hacker-tools.github.io/lectures/), yang mana kami
+(https://hacker-tools.github.io/lectures/), yang mana telah kami
 jalankan selama IAP tahun lalu. Itu adalah pendahulu dari
 kelas ini, dan mencakup banyak topik yang sama.
 <!--
@@ -289,7 +291,7 @@ Tools](https://hacker-tools.github.io/lectures/), which we ran during IAP last
 year. It is the precursor to this class, and covers many of the same topics.
 -->
 
-Kami berharap bisa bertemu dengan mu di bulan Januari,
+Kami berharap bisa bertemu denganmu di bulan Januari,
 baik secara virtual maupun langsung!
 <!--
 We hope to see you in January, whether virtually or in person!
