@@ -1,13 +1,8 @@
 ---
 layout: lecture
 title: "Mengapa kami mengajarkan hal ini"
+# title: "Why we are teaching this class"
 ---
-<!--
----
-layout: lecture
-title: "Why we are teaching this class"
----
--->
 
 Selama perkuliahan tradisional dari bidang informatika, kamu pasti mengikuti
 banyak kelas yang mengajarkan mu topik-topik lanjutan di bidang informatika,
