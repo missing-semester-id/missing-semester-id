@@ -261,6 +261,11 @@ ssh myserver journalctl
  | awk '{print $2}' | paste -sd,
 ```
 
+If you're using macOS: note that the command as shown won't work with the BSD
+`paste` shipped with macOS. See [exercise 4 from the shell tools
+lecture](/2020/shell-tools/#exercises) for more on the difference between BSD
+and GNU coreutils and instructions for how to install GNU coreutils on macOS.
+
 Let's start with `paste`: it lets you combine lines (`-s`) by a given
 single-character delimiter (`-d`; `,` in this case). But what's this `awk` business?
 
@@ -336,7 +341,7 @@ ssh myserver journalctl
  | grep "Disconnected from"
  | sed -E 's/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'
  | sort | uniq -c
- | awk '{print $1}' | R --slave -e 'x <- scan(file="stdin", quiet=TRUE); summary(x)'
+ | awk '{print $1}' | R --no-echo -e 'x <- scan(file="stdin", quiet=TRUE); summary(x)'
 ```
 
 R is another (weird) programming language that's great at data analysis

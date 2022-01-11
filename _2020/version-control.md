@@ -46,13 +46,13 @@ While Git admittedly has an ugly interface, its underlying design and ideas are
 beautiful. While an ugly interface has to be _memorized_, a beautiful design
 can be _understood_. For this reason, we give a bottom-up explanation of Git,
 starting with its data model and later covering the command-line interface.
-Once the data model is understood, the commands can be better understood, in
+Once the data model is understood, the commands can be better understood in
 terms of how they manipulate the underlying data model.
 
 # Git's data model
 
 There are many ad-hoc approaches you could take to version control. Git has a
-well thought-out model that enables all the nice features of version control,
+well-thought-out model that enables all the nice features of version control,
 like maintaining history, supporting branches, and enabling collaboration.
 
 ## Snapshots
@@ -88,7 +88,7 @@ sound like a fancy math word, but don't be intimidated. All this means is that
 each snapshot in Git refers to a set of "parents", the snapshots that preceded
 it. It's a set of parents rather than a single parent (as would be the case in
 a linear history) because a snapshot might descend from multiple parents, for
-example due to combining (merging) two parallel branches of development.
+example, due to combining (merging) two parallel branches of development.
 
 Git calls these snapshots "commit"s. Visualizing a commit history might look
 something like this:
@@ -136,7 +136,7 @@ type tree = map<string, tree | blob>
 
 // a commit has parents, metadata, and the top-level tree
 type commit = struct {
-    parent: array<commit>
+    parents: array<commit>
     author: string
     message: string
     snapshot: tree
@@ -191,7 +191,7 @@ git is wonderful
 
 ## References
 
-Now, all snapshots can be identified by their SHA-1 hash. That's inconvenient,
+Now, all snapshots can be identified by their SHA-1 hashes. That's inconvenient,
 because humans aren't good at remembering strings of 40 hexadecimal characters.
 
 Git's solution to this problem is human-readable names for SHA-1 hashes, called
@@ -538,10 +538,10 @@ game that teaches you Git.
 class website](https://github.com/missing-semester/missing-semester).
     1. Explore the version history by visualizing it as a graph.
     1. Who was the last person to modify `README.md`? (Hint: use `git log` with
-       an argument)
+       an argument).
     1. What was the commit message associated with the last modification to the
        `collections:` line of `_config.yml`? (Hint: use `git blame` and `git
-       show`)
+       show`).
 1. One common mistake when learning Git is to commit large files that should
    not be managed by Git or adding sensitive information. Try adding a file to
    a repository, making some commits and then deleting that file from history
@@ -554,11 +554,12 @@ class website](https://github.com/missing-semester/missing-semester).
 1. Like many command line tools, Git provides a configuration file (or dotfile)
    called `~/.gitconfig`. Create an alias in `~/.gitconfig` so that when you
    run `git graph`, you get the output of `git log --all --graph --decorate
-   --oneline`.
+   --oneline`. Information about git aliases can be found [here](https://git-scm.com/docs/git-config#Documentation/git-config.txt-alias).
 1. You can define global ignore patterns in `~/.gitignore_global` after running
    `git config --global core.excludesfile ~/.gitignore_global`. Do this, and
    set up your global gitignore file to ignore OS-specific or editor-specific
    temporary files, like `.DS_Store`.
 1. Fork the [repository for the class
    website](https://github.com/missing-semester/missing-semester), find a typo
-   or some other improvement you can make, and submit a pull request on GitHub.
+   or some other improvement you can make, and submit a pull request on GitHub
+   (you may want to look at [this](https://github.com/firstcontributions/first-contributions)).
