@@ -8,12 +8,17 @@ video:
   id: a6Q8Na575qc
 ---
 
+<!---
 Writing English words and writing code are very different activities. When
 programming, you spend more time switching files, reading, navigating, and
 editing code compared to writing a long stream. It makes sense that there are
 different types of programs for writing English words versus code (e.g.
 Microsoft Word versus Visual Studio Code).
+-->
+Penulisan dokumen atau artikel dalam bahasa natural sangat berbeda dengan penulisan kode program.
+Saat menulis kode program, biasanya seorang programmer menghabiskan waktu lebih untuk berpindah antar file, membaca file yang berbeda, dan mengubah isi file tersebut dibanding fokus pada satu file dalam waktu yang lama seperti penulisan dokumen bahasa natural. Sehingga, cukup masuk akal jika program komputer yang digunakan dalam menulis bahasa natural berbeda dengan untuk menulis kode program (contohnya Microsoft Word versus Visual Studio Code).
 
+<!--
 As programmers, we spend most of our time editing code, so it's worth investing
 time mastering an editor that fits your needs. Here's how you learn a new
 editor:
@@ -23,7 +28,14 @@ editor:
 you down initially)
 - Look things up as you go: if it seems like there should be a better way to do
 something, there probably is
+-->
+Sebagai seorang programmer, kita menghabiskan banyak waktu dalam menulis dan mengedit kode program. Sehingga, penguasaan editor yang cocok dengan kebutuhan kita sangatlah berguna untuk menambah produktifitas kerja kita. Untuk belajar editor baru biasanya programmer dapat melakukan langkah-langkah berikut:
 
+- Mulai dengan mempelajari suatu tutorial (contoh. kuliah ini, dan sumber-sumber materi yang terdapat pada dokumen ini)
+- Fokus menggunakan editor yang ingin dipelajari untuk keperluan sehari-hari (Meskipun hal ini akan membuat pekerjaan menjadi agak lambat di awal penggunaan editor)
+- Mencari trik-trik baru dalam penggunaan editor sesuai dengan kebutuhan anda sebagai programmer
+
+<!--
 If you follow the above method, fully committing to using the new program for
 all text editing purposes, the timeline for learning a sophisticated text
 editor looks like this. In an hour or two, you'll learn basic editor functions
@@ -32,7 +44,7 @@ you're 20 hours in, you should be as fast as you were with your old editor.
 After that, the benefits start: you will have enough knowledge and muscle
 memory that using the new editor saves you time. Modern text editors are fancy
 and powerful tools, so the learning never stops: you'll get even faster as you
-learn more.
+learn more. -->
 
 # Which editor to learn?
 
