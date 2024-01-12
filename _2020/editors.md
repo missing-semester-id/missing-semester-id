@@ -15,8 +15,13 @@ editing code compared to writing a long stream. It makes sense that there are
 different types of programs for writing English words versus code (e.g.
 Microsoft Word versus Visual Studio Code).
 -->
-Penulisan dokumen atau artikel dalam bahasa natural sangat berbeda dengan penulisan kode program.
-Saat menulis kode program, biasanya seorang programmer menghabiskan waktu lebih untuk berpindah antar file, membaca file yang berbeda, dan mengubah isi file tersebut dibanding fokus pada satu file dalam waktu yang lama seperti penulisan dokumen bahasa natural. Sehingga, cukup masuk akal jika program komputer yang digunakan dalam menulis bahasa natural berbeda dengan untuk menulis kode program (contohnya Microsoft Word versus Visual Studio Code).
+Penulisan dokumen atau artikel dalam bahasa natural sangat berbeda dengan 
+penulisan kode program. Saat menulis kode program, biasanya seorang programmer 
+menghabiskan waktu lebih untuk berpindah antar file, membaca file yang berbeda, 
+dan mengubah isi file-file tersebut dibanding fokus pada satu file dalam waktu 
+yang lama seperti penulisan dokumen bahasa natural. Sehingga, cukup masuk akal 
+jika program komputer yang digunakan dalam menulis bahasa natural berbeda dengan 
+untuk menulis kode program (contohnya _Microsoft Word versus Visual Studio Code_).
 
 <!--
 As programmers, we spend most of our time editing code, so it's worth investing
@@ -29,11 +34,18 @@ you down initially)
 - Look things up as you go: if it seems like there should be a better way to do
 something, there probably is
 -->
-Sebagai seorang programmer, kita menghabiskan banyak waktu dalam menulis dan mengedit kode program. Sehingga, penguasaan editor yang cocok dengan kebutuhan kita sangatlah berguna untuk menambah produktifitas kerja kita. Untuk belajar editor baru biasanya programmer dapat melakukan langkah-langkah berikut:
+Sebagai seorang _programmer_, kita menghabiskan banyak waktu dalam menulis dan 
+mengedit kode program. Sehingga, penguasaan _editor_ yang cocok dengan kebutuhan 
+kita sangatlah berguna untuk menambah produktifitas kerja kita. Untuk belajar 
+_editor_ baru biasanya _programmer_ dapat melakukan langkah-langkah berikut:
 
-- Mulai dengan mempelajari suatu tutorial (contoh. kuliah ini, dan sumber-sumber materi yang terdapat pada dokumen ini)
-- Fokus menggunakan editor yang ingin dipelajari untuk keperluan sehari-hari (Meskipun hal ini akan membuat pekerjaan menjadi agak lambat di awal penggunaan editor)
-- Mencari trik-trik baru dalam penggunaan editor sesuai dengan kebutuhan anda sebagai programmer
+- Mulai dengan mempelajari suatu tutorial (contoh. kuliah ini, dan sumber-sumber
+materi yang terdapat pada dokumen ini)
+- Fokus menggunakan _editor_ yang ingin dipelajari untuk keperluan sehari-hari
+(Meskipun hal ini akan membuat pekerjaan menjadi agak lambat di awal penggunaan
+editor)
+- Mencari trik-trik baru dalam penggunaan _editor_ sesuai dengan kebutuhan anda
+sebagai _programmer_
 
 <!--
 If you follow the above method, fully committing to using the new program for
@@ -45,6 +57,18 @@ After that, the benefits start: you will have enough knowledge and muscle
 memory that using the new editor saves you time. Modern text editors are fancy
 and powerful tools, so the learning never stops: you'll get even faster as you
 learn more. -->
+
+Jika anda mengikuti metode diatas, dan selalu menggunakan _editor_ yang sedang 
+dipelajari dalam tiap pekerjaan anda, perjalanan belajar anda akan seperti 
+berikut: Dalam satu atau dua jam, anda akan mempelajari fungsi dasar _editor_ 
+seperti, membuka dan mengedit _file_, penyimpanan/keluar aplikasi, dan navigasi 
+_buffer_. Sesudah 20 jam, anda harusnya sudah sangat nyaman seperti menggunakan 
+_editor_ yang biasa anda gunakan sebelumnya. Setelah itu, keunggulan menggunakan 
+editor baru ini akan terasa: anda akan memiliki pengetahuan dan memori otot yang 
+cukup dalam menggunakan _editor_ ini sehingga banyak waktu yang dapat dihemat.
+_Editor_ teks modern merupakan _tools_ yang cukup _powerful_, dalam perjalanan 
+menggunakan _editor_ ini, anda akan menemukan trik-trik baru yang membuat pekerjaan
+anda semakin cepat dan efisien!
 
 # Which editor to learn?
 
