@@ -70,6 +70,7 @@ _Editor_ teks modern merupakan _tools_ yang cukup _powerful_, dalam perjalanan
 menggunakan _editor_ ini, anda akan menemukan trik-trik baru yang membuat pekerjaan
 anda semakin cepat dan efisien!
 
+<!--
 # Which editor to learn?
 
 Programmers have [strong opinions](https://en.wikipedia.org/wiki/Editor_war)
@@ -81,7 +82,22 @@ survey](https://insights.stackoverflow.com/survey/2019/#development-environments
 of programmers as a whole). [Visual Studio
 Code](https://code.visualstudio.com/) is the most popular editor.
 [Vim](https://www.vim.org/) is the most popular command-line-based editor.
+-->
 
+# Editor apakah yang akan dipelajari?
+
+_Programmer_ memiliki [Opini yang kuat](https://id.wikipedia.org/wiki/Perang_editor) 
+tentang _editor_ teks terbaik versi mereka. 
+
+Untuk melihat editor mana yang populer sekarang, anda bisa melihat 
+[survey _Stack Oveflow_](https://insights.stackoverflow.com/survey/2019/#development-environments-and-tools)
+(mungkin terdapat bias pada survey ini, karena pengguna _Stack Overflow_
+tidak merepresentasikan komunitas programmer secara menyeluruh). [_Visual Studio
+Code_](https://code.visualstudio.com/) adalah _editor_ terpopuler dalam survey 
+tersebut. Dan [Vim](https://www.vim.org/) adalah _editor_ berbasis _command line_
+yang paling populer.
+
+<!--
 ## Vim
 
 All the instructors of this class use Vim as their editor. Vim has a rich
@@ -96,7 +112,19 @@ It's not possible to teach all of Vim's functionality in 50 minutes, so we're
 going to focus on explaining the philosophy of Vim, teaching you the basics,
 showing you some of the more advanced functionality, and giving you the
 resources to master the tool.
+-->
 
+## Vim
+Semua pengajar dalam kelas ini menggunakan _Vim_ sebagai editor. Sejarah _Vim_  
+cukup panjang. _Vim_ dikembangkan dari editor _Vi_ (1976), yang sampai sekarang
+pun masih dikembangkan. _Vim_ memilki banyak fungsionalitas yang berguna, karena
+alasan ini banyak _tools_ yang memiliki _support_ emulasi _Vim_ (contohnya, 1.4 
+juta orang telah menginstall [Vim emulation untuk VS code](https://github.com/VSCodeVim/Vim)).
+Karena alasan tersebut, Vim mungkin tetap sangat berguna untuk dipelajari, meskipun 
+pada akhirnya anda memilih untuk menggunakan _editor_ lain.
+
+
+<!--
 # Philosophy of Vim
 
 When programming, you spend most of your time reading/editing, not writing. For
@@ -108,7 +136,23 @@ composable. Vim avoids the use of the mouse, because it's too slow; Vim even
 avoids using the arrow keys because it requires too much movement.
 
 The end result is an editor that can match the speed at which you think.
+-->
 
+# Filosofi _Vim_
+
+Ketika menulis kode program, anda akan menggunakan lebih banyak waktu anda untuk 
+membaca dan mengedit, bukan menulis dalam waktu panjang pada satu file. Oleh sebab 
+itu, Vim adalah editor _modal_: ia memiliki berbagai macam _mode_ untuk memyisipkan 
+teks dan memanipulasi teks. _Vim_ adalah editor yang _programmable_ (menggunakan 
+_Vimscript_ dan bahasa pemrograman lain seperti _Python_), dan antarmuka _Vim_ sendiri 
+adalah bahasa pemrograman: tiap tombol keyboard (dengan penamaan yang mudah diingat)
+merupakan perintah operasi, dan perintah operasi ini dapat digabungkan sesuai kebutuhan.
+_Vim_ menghindari penggunaan mouse, karena dapat memperlambat proses kerja kita.
+Selain mouse, _Vim_ juga menghinadari penggunaan tombol arah, karena penggunaannya dapat
+memperlambat navigasi dalam file. 
+
+
+<!--
 # Modal editing
 
 Vim's design is based on the idea that a lot of programmer time is spent
@@ -139,7 +183,44 @@ with `<C-v>` (Ctrl-V, sometimes also written `^V`), and Command-line mode with
 You use the `<ESC>` key a lot when using Vim: consider remapping Caps Lock to
 Escape ([macOS
 instructions](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_macOS)).
+-->
 
+# Modal editing
+
+Design _Vim_ berdasarkan argumen bahwa banyak waktu _programmer_ dihabiskan untuk
+membaca, menavigasi, dan melakukan perubahan dalam skala kecil pada file-file basis 
+kode yang dikerjakan. Hal tersebut berbeda dengan penulisan teks yang banyak dan 
+cenderun fokus pada satu file seperti pada penulisan dokumen atau artikel bahasa 
+natural. Karena alasan tersebut, Vim memiliki beberapa mode operasi.
+
+- **Normal**: untuk navigasi dalam file dan melakukan perubahan pada teks dalam file
+- **Insert**: untuk menyisipkan teks
+- **Replace**: untuk me-replace teks
+- **Visual** (plain, line, atau block): untuk memilih blok teks
+- **Command-line**: untuk menjalankan perintah
+
+Tiap tombol memiliki kegunaan yang berbeda dalam mode operasi yang berbeda. 
+Contohnya, tombol huruf 'x' dalam mode Insert berfungsi untuk menyisipkan huruf 
+'x' seperti layaknya dalam teks editor umum. Namun, dalam mode Normal, tombol 
+huruf 'x' berfungsi untuk menghapus huruf dalam kursor aktif. Lain pula dalam mode 
+Visual, tombol tersebut akan menghapus teks yang terseleksi.
+
+Dalam pengaturan defaultnya, _Vim_ menampilkan mode yang aktif di bagian kiri bawah.
+Mode awal/default dalam _Vim_ adalah mode Normal. Saat menggunakan _Vim_, anda akan 
+banyak menghabiskan waktu pada mode Normal dan mode Insert.
+
+Kita dapat mengaktifkan atau kembali ke mode Normal dari mode lain dengan 
+menekan '<ESC>' (tombol escape). Dari mode Normal, kita bisa menekan tombol 'i' 
+untuk mengaktifkan mode Insert, tombol 'R' untuk mode Replace, tombol 'v' untuk mode
+Visual, 'V' untuk mode Visual Line, '<C-v>' (Ctrl-V, kadang ditulis juga dengan '^V')
+untuk Visual mode Visual Block, dan tombol ':' untuk mode Command-line. 
+
+Kita akan menggunakan tombol '<ESC>' cukup sering ketika menggunakan _Vim_: salah 
+satu tips agar jangkauannya menjadi lebih dekat, adalah dengan melakukan _remapping_
+Caps Lock ke tombol Escape ([instruksi untuk pengguna 
+macOS](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_macOS)).
+
+<!--
 # Basics
 
 ## Inserting text
@@ -149,6 +230,19 @@ other text editor, until you press `<ESC>` to return to Normal mode. This,
 along with the basics explained above, are all you need to start editing files
 using Vim (though not particularly efficiently, if you're spending all your
 time editing from Insert mode).
+
+-->
+
+# Dasar-dasar Vim
+
+## Menyisipkan teks
+
+Dalam mode Normal, tekan 'i' untuk masuk kedalam mode Insert. Dalam mode ini,
+Vim bekerja seperti teks editor pada umumnya. Untuk kembali ke mode Normal, 
+kita dapat menekan tombol '<ESC>'. Kedua hal ini cukup untuk memulai menggunakan
+_Vim_ (Namun hal ini akan sangat tidak efisien, terutama karena kita menghabiskan
+waktu kita untuk melakukan editing dalam mode Insert).
+
 
 ## Buffers, tabs, and windows
 
