@@ -459,7 +459,7 @@ a number of times.
 
 ## Hitungan (Counts)
 
-Kita dapat mengkombinasikan nouns dan verbs dengan counts. Menggunakan counts
+Kita dapat mengkombinasikan nouns dan verbs dengan counts. Dengan enggunakan counts,
 perintah kita akan dilakukan sebanyak sekian kali.
 
 - `3w` berpindah 3 huruf kedepan
@@ -467,6 +467,7 @@ perintah kita akan dilakukan sebanyak sekian kali.
 - `7dw` hapus 7 huruf
 
 
+<!--
 ## Modifiers
 
 You can use modifiers to change the meaning of a noun. Some modifiers are `i`,
@@ -475,7 +476,19 @@ which means "inner" or "inside", and `a`, which means "around".
 - `ci(` change the contents inside the current pair of parentheses
 - `ci[` change the contents inside the current pair of square brackets
 - `da'` delete a single-quoted string, including the surrounding single quotes
+-->
 
+## Modifiers
+
+Kita dapat menggunakan modifiers untuk mengubah "arti" dari sebuah noun. 
+Salah satu modifiers yang sering digunakan adalah `i`, yang artinya "inner"
+atau "inside" (di dalam). Kemudian`a`, yang artinya "around" (sekitar).
+
+- `ci(` ubah konten di dalam tanda kurung ()
+- `ci[` ubah konten didalam tanda kurung []
+- `da'` hapus string tanda petik satu `'`, termasuk string di sekitarnya
+
+<!--
 # Demo
 
 Here is a broken [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz)
@@ -532,7 +545,68 @@ See the lecture video for the demonstration. Compare how the above changes are
 made using Vim to how you might make the same edits using another program.
 Notice how very few keystrokes are required in Vim, allowing you to edit at the
 speed you think.
+-->
 
+# Contoh kasus
+
+Mari kita lihat contoh penggalan program [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz)
+yang masih perlu diperbaiki agar implementasinya benar:
+
+```python
+def fizz_buzz(limit):
+    for i in range(limit):
+        if i % 3 == 0:
+            print('fizz')
+        if i % 5 == 0:
+            print('fizz')
+        if i % 3 and i % 5:
+            print(i)
+
+def main():
+    fizz_buzz(10)
+```
+
+Kita akan memperbaiki beberapa masalah dibawah ini
+
+- Fungsi `main()` belum dipanggil 
+- Perulangan dimulai dengan angka 0 (harusnya 1)
+- "fizz" dan "buzz" tidak tercetak pada baris berbeda untuk kelipatan 15
+- Kelipatan 5 memunculkan "fizz" 
+- Penggunaan argumen angka 10 yang _hard-coded_ alih-alih menggunakan argumen 
+command-line 
+
+{% comment %}
+- fungsi `main()` belum dipanggil
+  - `G` pergi ke bagian akhir file
+  - `o` membuat baris baru
+  - sisipkan "if __name__ ..." 
+- perulangan dimulai dengan angka 0 (harusnya 1)
+  - cari kata "range" dengan perintah `/range`
+  - `ww` untuk maju 2 kata
+  - `i` untuk menyisipkan teks "1, " 
+  - `ea` untuk menyisipkan "+1" setelah variabel `limit`
+- buat baris baru untuk "fizzbuzz"
+  - `jj$i` untuk menyisipkan teks pada akhir baris
+  - tambahkan ", end=''"
+  - `jj.` ulangi untuk perintah print kedua
+  - `jjo` buat baris baru dibawah if
+  - tambahkan "else: print()"
+- fizz fizz
+  - `ci'` untuk mengganti fizz
+- argumen command-line 
+  - `ggO` untuk membuka baris pertama dan akhir baris
+  - "import sys"
+  - `/10`
+  - `ci(` sisipkan "int(sys.argv[1])"
+{% endcomment %}
+
+Tonton video perkuliahan untuk demonstrasi langsung langkah-langkah diatas.
+Coba bandingkan bagaimana jika kita menggunakan editor lain untuk melakukan
+pekerjaan yang sama. Kita bisa melihat bahwa dengan menggunakan _Vim_, proses
+edit bisa dilakukan dengan lebih cepat karena kita menekan tombol keyboard 
+dalam frekuensi yang lebih sedikit. 
+
+<!--
 # Customizing Vim
 
 Vim is customized through a plain-text configuration file in `~/.vimrc`
@@ -552,6 +626,31 @@ inspiration, for example, your instructors' Vim configs
 [Jose](https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc)). There are
 lots of good blog posts on this topic too. Try not to copy-and-paste people's
 full configuration, but read it, understand it, and take what you need.
+-->
+
+# Pengaturan _Vim_
+
+Untuk membuat _Vim_ menjadi seperti yang kita inginkan, kita dapat mengubah
+pengaturan _Vim_ melalui file '~/.vimrc' (yang berisi perintah perintah _Vimscript_).
+Mungkin ada beberapa penaturan yang ingin kita aktifkan untuk mempermudah 
+pekerjaan kita.
+
+Tutorial ini menyediakan konfigurasi dasar yang terdokumentasi dengan baik
+untuk kita gunakan sebagai file konfigurasi awal kita. Kami merekomendasikan
+untuk memakai konfigurasi ini, agar beberapa hal yang kurang praktis dari 
+pengaturan default _Vim_ bisa dihindari.  **Silahkan unduh konfigurasi
+tersebut [disini](/2020/files/vimrc) dan simpan ke dalam `~/.vimrc`.**
+
+Pengaturan _Vim_ sangatlah kaya dan fleksibel, dan mempelajari berbagai macam
+opsi pengaturan dalam _Vim_ sangatlah direkomendasikan. Anda dapat melihat 
+_ditfiles_ pengguna _Vim_ lain di GitHub sebagai referensi untuk konfigurasi anda.
+Sebagai contoh konfigurasi _Vim_ pengajar turorial ini dapat dilihat di:  
+([Anish](https://github.com/anishathalye/dotfiles/blob/master/vimrc),
+[Jon](https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim) (uses [neovim](https://neovim.io/)),
+[Jose](https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc)). Selain
+referensi diatas banyak juga postingan blog bagus yang membahas topik ini.
+Cobalah untuk tidak hanya melakukan _copy-paste_ konfigurasi pengguna _Vim_
+lain, namun baca, pahami, dan ambil bagian bagian yang anda butuhkan.
 
 # Extending Vim
 
