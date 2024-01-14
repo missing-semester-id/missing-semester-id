@@ -243,7 +243,7 @@ kita dapat menekan tombol '<ESC>'. Kedua hal ini cukup untuk memulai menggunakan
 _Vim_ (Namun hal ini akan sangat tidak efisien, terutama karena kita menghabiskan
 waktu kita untuk melakukan editing dalam mode Insert).
 
-
+<!--
 ## Buffers, tabs, and windows
 
 Vim maintains a set of open files, called "buffers". A Vim session has a number
@@ -255,7 +255,23 @@ even within the same tab. This can be quite handy, for example, to view two
 different parts of a file at the same time.
 
 By default, Vim opens with a single tab, which contains a single window.
+-->
 
+## Buffer, tab, dan window
+
+"Buffer" adalah file-file yang sedang di tangani/dibuka oleh _Vim_. Suatu sesi 
+_Vim_ biasanya memiliki beberapa tab, dimana tiap tabnya memilki beberapa window. 
+Setiap window menampilkan sebuah buffer. Berbeda dengan program komputer yang 
+biasa kita pakai, seperti browser web, buffer dan window tidak memilki hubungan 
+satu satu (1-to-1); windows hanya berfungsi sebagai view (menampilkan buffer).
+Satu buffer dapat dibuka dengan lebih dari satu window, meski dalam satu tab 
+yang sama. Hal ini sangat berguna, contohnya ketika kita ingin melihat bagian
+berbeda dalam satu file secara bersamaan. 
+
+Dalam kondisi default, _Vim_ akan terbuka dengan satu tab, yang berisi satu
+window.
+
+<!--
 ## Command-line
 
 Command mode can be entered by typing `:` in Normal mode. Your cursor will jump
@@ -271,14 +287,43 @@ has many functionalities, including opening, saving, and closing files, and
 - `:help {topic}` open help
     - `:help :w` opens help for the `:w` command
     - `:help w` opens help for the `w` movement
+-->
 
+## Mode command-line
+
+Kita dapat masuk kedalam mode command-line dengan cara menekan tombol ':' pada 
+mode Normal. Kursor akan berpindah ke baris perintah saat tombol ':' ditekan. Mode
+ini memiliki banyak kegunaan, seperti membuka, menyimpan dan menutup file. Dan
+tak lupa untuk [menutup _Vim_](https://twitter.com/iamdevloper/status/435555976687923200).
+
+- ':q' keluar ('quit', menutup window)
+- ':w' simpan ('write')
+- ':wq' simpan dan keluar
+- ':e {nama file}' buka file untuk editing
+- ':ls' menampilkan buffer-buffer yang terbuka
+- ':help {topik}' membuka panduan _Vim_
+    - ':help :w' membuka panduan untuk perintah ':w'
+    - ':help w' membuka panduan untuk tombol 'w'
+
+<!--
 # Vim's interface is a programming language
 
 The most important idea in Vim is that Vim's interface itself is a programming
 language. Keystrokes (with mnemonic names) are commands, and these commands
 _compose_. This enables efficient movement and edits, especially once the
 commands become muscle memory.
+-->
 
+# Antarmuka _Vim_ sebagai bahasa pemrograman
+
+Salah satu hal terpenting dalam _Vim_ adalah antarmuka _Vim_ sendiri merupakan
+sebuah bahasa pemrograman. Tombol keyboard (dengan penamaan yang mudah diingat) 
+adalah perintah, dan perintah-perintah ini dapat digabungkan satu sama lain. 
+Hal tersebut dapat menambah efisiensi dalam pergerakan dan penyuntingan teks 
+atau kode program. Terutama saat pengguna hapal diluar kepala akan perintah-perintah
+yang ada. 
+
+<!--
 ## Movement
 
 You should spend most of your time in Normal mode, using movement commands to
@@ -297,7 +342,30 @@ refer to chunks of text.
     - find/to forward/backward {character} on the current line
     - `,` / `;` for navigating matches
 - Search: `/{regex}`, `n` / `N` for navigating matches
+-->
+## Perpindahan
+Biasanya saat menggunakan _Vim_, waktu kita akan banyak digunakan untuk berpindah
+dalam dan antar buffer pada mode Normal, menggunakan perintah-perintah perpindahan.
+Perpindahan dalam _Vim_ disebut juga dengan "nouns", karena perintah-perintahnya 
+merujuk pada potongan teks.
 
+- Perintah perpindahan dasar: `hjkl` (kiri, bawah, atas, kanan)
+- Kata: `w` ('word', kata selanjutnya), `b` ('beginning', awal dari kata), 
+`e` ('end', akhir dari kata)
+- Baris: `0` (awal baris), `^` (karakter _non-blank_ pertama), `$` (akhir baris)
+- Layar: `H` (atas layar), `M` (tengah layar), `L` (bawah layar)
+- _Scroll_: `Ctrl-u` (atas), `Ctrl-d` (bawah)
+- File: `gg` (awal dari file), `G` (akhir dari file)
+- Nomor baris: `:{nomor}<CR>` atau `{nomor}G` (baris {nomor})
+- Pasangan: `%` (berpindah ke karakter pasangan, misal untuk tanda kurung kiri 
+dan kanan)
+- Temukan: `f{karakter}`, `t{karakter}`, `F{karakter}`, `T{karakter}`
+    - temukan/ke kedepan/kebelakang {karakter} pada baris aktif 
+    - `,` / `;` untuk berpindah ke {karakter} yang cocok
+- Pencarian: `/{regex}`, `n` / `N` untuk berpindah ke item yang cocok
+
+
+<!--
 ## Selection
 
 Visual modes:
@@ -307,6 +375,19 @@ Visual modes:
 - Visual Block: `Ctrl-v`
 
 Can use movement keys to make selection.
+-->
+
+## Seleksi
+
+Mode visual:
+
+- Visual: 'v'
+- Visual line: 'V'
+- Visual Block: 'Ctrl-v'
+
+Dengan menggunakan mode ini kita dapat menggunakan tombol gerak
+untuk menyeleksi teks secara visual. 
+
 
 ## Edits
 
