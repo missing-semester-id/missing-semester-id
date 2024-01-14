@@ -381,14 +381,15 @@ Can use movement keys to make selection.
 
 Mode visual:
 
-- Visual: 'v'
-- Visual line: 'V'
-- Visual Block: 'Ctrl-v'
+- Visual: `v`
+- Visual line: `V`
+- Visual Block: `Ctrl-v`
 
 Dengan menggunakan mode ini kita dapat menggunakan tombol gerak
 untuk menyeleksi teks secara visual. 
 
 
+<!--
 ## Edits
 
 Everything that you used to do with the mouse, you now do with the keyboard
@@ -414,7 +415,38 @@ are also called "verbs", because verbs act on nouns.
 - `y` to copy / "yank" (some other commands like `d` also copy)
 - `p` to paste
 - Lots more to learn: e.g. `~` flips the case of a character
+-->
 
+## Edit 
+
+Pekerjaan yang biasanya bisa kita kerjakan menggunakan mouse, dapat kita kerjakan
+menggunakan keyboard dengan perintah editing digabungkan dengan perintah pergerakan.
+Dengan melakukan hal tersebut antarmuka _Vim_ mulai mirip dengan bahasa pemrograman.
+Perintah editing dalam _Vim_ dikenal juga dengan "verbs", karena (dalam bahasa inggris)
+verbs bertindak pada nouns.
+
+- `i` masuk keadalam mode Insert
+    - namun untuk memanipulasi/menghapus teks, kita ingin menggunakan cara lain 
+    selain tombol backspace
+- `o` / `O` sisipkan baris baru di bawah/atas kursor aktif
+- `d{pergerakan}` menghapus (delete) {pergerakan}
+    - Contoh: `dw` digunakan untuk menghapus kata (word), `d$` hapus sampai akhir baris,
+    `d0` hapus sampai awal baris
+- `c{pergerakan}` ubah {pergerakan}
+    - Contoh `cw` digunakan untuk menghubah kata
+    - Seperti `d{pergerakan}` diikuti dengan `i`
+- `x` hapus satu karakter/huruf (sepadan dengan `d1`)
+- `s` ganti karakter/huruf (sepadan dengan `xi`)
+- Mode Visual + manipulasi 
+    - seleksi teks yang diinginkan, `d` untuk menghapus atau `c` untuk mengubah 
+- `u` untuk membatalkan perubahan terakhir (undo), `C-r` untuk redo
+- `y` untuk menyalin (copy) / "yank" (beberapa perintah lain seperti `d` juga menyalin)
+- `p` untuk menyisipkan item yang telah disalin (paste)
+- Banyak perintah lain juga untuk dipelajari: contoh `-` untuk mebalik _case_ sebuah 
+huruf.
+
+
+<!--
 ## Counts
 
 You can combine nouns and verbs with a count, which will perform a given action
@@ -423,6 +455,17 @@ a number of times.
 - `3w` move 3 words forward
 - `5j` move 5 lines down
 - `7dw` delete 7 words
+-->
+
+## Hitungan (Counts)
+
+Kita dapat mengkombinasikan nouns dan verbs dengan counts. Menggunakan counts
+perintah kita akan dilakukan sebanyak sekian kali.
+
+- `3w` berpindah 3 huruf kedepan
+- `5j` berpindah 3 baris kebawah
+- `7dw` hapus 7 huruf
+
 
 ## Modifiers
 
