@@ -648,10 +648,11 @@ Sebagai contoh konfigurasi _Vim_ pengajar turorial ini dapat dilihat di:
 ([Anish](https://github.com/anishathalye/dotfiles/blob/master/vimrc),
 [Jon](https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim) (uses [neovim](https://neovim.io/)),
 [Jose](https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc)). Selain
-referensi diatas banyak juga postingan blog bagus yang membahas topik ini.
+referensi diatas, banyak juga postingan blog bagus yang membahas topik ini.
 Cobalah untuk tidak hanya melakukan _copy-paste_ konfigurasi pengguna _Vim_
 lain, namun baca, pahami, dan ambil bagian bagian yang anda butuhkan.
 
+<!--
 # Extending Vim
 
 There are tons of plugins for extending Vim. Contrary to outdated advice that
@@ -675,6 +676,33 @@ can check out the instructors' dotfiles
 Check out [Vim Awesome](https://vimawesome.com/) for more awesome Vim plugins.
 There are also tons of blog posts on this topic: just search for "best Vim
 plugins".
+-->
+
+# Menambah kapabilitas _Vim_
+
+Banyak sekali _plugin_ yang dapat digunakan untuk menambah kpabilitas _Vim_.
+Berbeda dengan saran yang mungkin bisa kita temukan di internet, anda _tidak_
+diharuskan untuk menggunakan manajemen _plugin_ untuk _Vim_ (sejak versi 8.0).
+Karena _Vim_ sudah memiliki sistem manajemen _plugin_ nya sendiri. Untuk 
+menggunakannya kita bisa membuat direktori `~/.vim/pack/vendor/start/`, kemudian 
+masukkan plugin yang ingin di install ke dalam direktori tersebut (contohnya via 
+`git clone`).
+
+Berikut beberapa _plugin_ yang kami rekomendasikan:
+
+- [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): pencarian file 
+- [ack.vim](https://github.com/mileszs/ack.vim): pencarian kode
+- [nerdtree](https://github.com/scrooloose/nerdtree): penjelajah file
+- [vim-easymotion](https://github.com/easymotion/vim-easymotion): magic motions
+
+Tutorial ini menghindari memberikan daftar _plugin_ yang terlalu banyak. Anda
+bisa melihat _dotfiles_ pengajar jika tertarik untuk mempelajari plugin-plugin
+lain: ([Anish](https://github.com/anishathalye/dotfiles),
+[Jon](https://github.com/jonhoo/configs),
+[Jose](https://github.com/JJGO/dotfiles)) untuk melihat plugin lain yang biasa 
+kami gunakan, anda bisa kunjungi halaman [Vim Awesome](https://vimawesome.com/) 
+untuk plugin yang lebih menarik. Banyak sekali blog post yang membahas topik ini
+anda bisa menggunakan kata kunci "best Vim plugins" untuk mengunjunginya.
 
 # Vim-mode in other programs
 
