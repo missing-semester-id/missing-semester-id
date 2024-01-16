@@ -704,12 +704,23 @@ kami gunakan, anda bisa kunjungi halaman [Vim Awesome](https://vimawesome.com/)
 untuk plugin yang lebih menarik. Banyak sekali blog post yang membahas topik ini
 anda bisa menggunakan kata kunci "best Vim plugins" untuk mengunjunginya.
 
+
+<!--
 # Vim-mode in other programs
 
 Many tools support Vim emulation. The quality varies from good to great;
 depending on the tool, it may not support the fancier Vim features, but most
 cover the basics pretty well.
+-->
 
+# Mode _Vim_ di program lain
+
+Banyak tools mendukung emulasi _Vim_. Namun, kualitas emulasinya bermacam-macam;
+tergantung tools yang kita gunakan. Mungin beberapa tidak mendukung fitur _Vim_
+yang _advance_, namun hampir semua sudah mendukung fitur dasar dengan baik.
+
+
+<!--
 ## Shell
 
 If you're a Bash user, use `set -o vi`. If you use Zsh, `bindkey -v`. For Fish,
@@ -717,7 +728,19 @@ If you're a Bash user, use `set -o vi`. If you use Zsh, `bindkey -v`. For Fish,
 `export EDITOR=vim`. This is the environment variable used to decide which
 editor is launched when a program wants to start an editor. For example, `git`
 will use this editor for commit messages.
+-->
 
+## Shell
+
+Jika anda pengguna _Bash_, gunakan `set -o vi`. Jika anda menggunakan Zsh, `bindkey -v`
+untuk _Fish_, `fish_vi_key_bindings`. selanjutnya, apapun jenis shell yang anda gunakan,
+anda bis menggunakan `export EDITOR=vim`. Ini merupakan variabel environment yang 
+digunakan untuk menentukan editor mana yang digunakan ketika sebuah program ingin membuka
+sebuah aditor. Contohnya, `git` akan menggunakan editor yang dipilih untuk menyisipkan
+pesan dalam perintah _commit_.
+
+
+<!--
 ## Readline
 
 Many programs use the [GNU
@@ -730,6 +753,21 @@ set editing-mode vi
 ```
 
 With this setting, for example, the Python REPL will support Vim bindings.
+-->
+
+## Readline
+
+Banyak program memakai [GNU
+Readline](https://tiswww.case.edu/php/chet/readline/rltop.html), library 
+untuk antarmuka command-line mereka. Readline mendukung (dasar) emulasi _Vim_,
+yang dapat diaktifkan dengan menambahkan baris berikut kedalam file `~/.inputrc`:
+
+```
+set editing-mode vi
+```
+
+Dengan pengaturan ini, sebagai contoh, Python REPL akan mendukung bindings _Vim_.
+
 
 ## Others
 
