@@ -769,7 +769,7 @@ set editing-mode vi
 Dengan pengaturan ini, sebagai contoh, Python REPL akan mendukung bindings _Vim_.
 
 
-## Others
+<!-- ## Others
 
 There are even vim keybinding extensions for web
 [browsers](http://vim.wikia.com/wiki/Vim_key_bindings_for_web_browsers) - some
@@ -779,14 +779,39 @@ for Google Chrome and [Tridactyl](https://github.com/tridactyl/tridactyl) for
 Firefox. You can even get Vim bindings in [Jupyter
 notebooks](https://github.com/lambdalisue/jupyter-vim-binding).
 Here is a [long list](https://reversed.top/2016-08-13/big-list-of-vim-like-software) of software with vim-like keybindings.
+-->
 
+## Lain-lain
+
+Bahkan, ekstensi ketbinding _Vim_ pun tersedia untuk browser 
+[web](http://vim.wikia.com/wiki/Vim_key_bindings_for_web_browsers) - beberapa 
+yang populer antara lain adalah 
+[Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en)
+untuk Google Chrome dan [Tridactyl](https://github.com/tridactyl/tridactyl) 
+untuk Firefox. Kita bahkan bisa mendapatkan keybinding _Vim_ untuk 
+[Jupyter notebook](https://github.com/lambdalisue/jupyter-vim-binding). Berikut
+adalah [daftar panjang](https://reversed.top/2016-08-13/big-list-of-vim-like-software) 
+perangkat lunak yang memiliki keybinding yang mirip dengan _Vim_
+
+<!--
 # Advanced Vim
 
 Here are a few examples to show you the power of the editor. We can't teach you
 all of these kinds of things, but you'll learn them as you go. A good
 heuristic: whenever you're using your editor and you think "there must be a
 better way of doing this", there probably is: look it up online.
+-->
 
+# Vim lanjutan
+
+Berikut adalah beberapa contoh kegunaan _Vim_ dengan fungsi yang lebih canggih.
+Tidak semua kegunaan _Vim_ dijelaskan di halaman ini, namun, anda akan belajar
+seiring dengan penggunaan _Vim_ untuk pekerjaan anda sehari-hari. Tips yang cukup
+bagus: tiap kali anda mengunakan editor dan anda berpikir bahwa "Mungkin ada 
+cara yang lebih baik untuk melakukan ini", mungkin anda benar dan cobalah untuk
+mencarinya di internet.
+
+<!--
 ## Search and replace
 
 `:s` (substitute) command ([documentation](http://vim.wikia.com/wiki/Search_and_replace)).
@@ -795,12 +820,28 @@ better way of doing this", there probably is: look it up online.
     - replace foo with bar globally in file
 - `%s/\[.*\](\(.*\))/\1/g`
     - replace named Markdown links with plain URLs
+-->
 
-## Multiple windows
+## Cari dan ganti (search and replace)
+
+`:s` perintah ganti (substitute) ([dokumentasi](http://vim.wikia.com/wiki/Search_and_replace)).
+
+- `%s/foo/bar/g`
+    - Ganti foo dengan bar secara global didalam file 
+- `%s/\[.*\](\(.*\))/\1/g`
+    - Ganti _named_ Markdown link dengan URL biasa
+
+<!-- ## Multiple windows
 
 - `:sp` / `:vsp` to split windows
 - Can have multiple views of the same buffer.
+-->
 
+## Window lebih dari satu
+- `:sp` / `:vsp` untuk membelah window
+- Dapat menggunakan lebih dari satu view pada _buffer_ yang sama
+
+<!--
 ## Macros
 
 - `q{character}` to start recording a macro in register `{character}`
@@ -834,8 +875,43 @@ better way of doing this", there probably is: look it up online.
         - Execute macro until end of file
             - `999@q`
         - Manually remove last `,` and add `[` and `]` delimiters
+-->
 
-# Resources
+## Macros
+
+- `q{karakter}` untuk memulai merekam _macro_ dalam register `{karakter}`
+- `q` untuk berhenti merekan 
+- `@{karakter}` menjalankan ulang _macro_ 
+- Eksekusi _macro_ berhenti ketika terjadi error 
+- `{angka}@{karakter}` jalankan _macro_ {angka} kali
+- _Macro_ dapat bersifat rekursif
+    - hapus _macro_ dengan `q{character}q`
+    - rekam _macro_, dengan `@{character}` untuk memanggilnya secara rekursif 
+    (_no-op_ sampai perekaman selesai)
+- Contoh: konversi xml ke json ([file](/2020/files/example-data.xml))
+    - Object Array dengan key "name"/"email"
+    - Menggunakan program Python? 
+    - Menggunakan sed / regexes
+        - `g/people/d`
+        - `%s/<person>/{/g`
+        - `%s/<name>\(.*\)<\/name>/"name": "\1",/g`
+        - ...
+    - Perintah _Vim_ / macros
+        - `Gdd`, `ggdd` hapus baris pertama dan terakhir
+        - _Macro_ untuk memformat elemen tunggal (register `e`)
+            - Pergi ke baris yang memiliki `<name>`
+            - `qe^r"f>s": "<ESC>f<C"<ESC>q`
+        - _Macro_ untuk memformat _person_ 
+            - Menuju baris yang memiliki `<person>`
+            - `qpS{<ESC>j@eA,<ESC>j@ejS},<ESC>q`
+        - _Macro_ untuk memformat _person_ dan menuju _person_ selanjutnya 
+            - Menuju baris yang memiliki `<person>`
+            - `qq@pjq`
+        - Jalankan _macro_ sampai dengan baris terakhir dalam file 
+            - `999@q`
+        - Hapus `,` terakhir secara manual dan tambahkan delimiter `[` dan `]`
+
+<!-- # Resources
 
 - `vimtutor` is a tutorial that comes installed with Vim - if Vim is installed, you should be able to run `vimtutor` from your shell
 - [Vim Adventures](https://vim-adventures.com/) is a game to learn Vim
@@ -845,7 +921,23 @@ better way of doing this", there probably is: look it up online.
 - [Vi/Vim Stack Exchange](https://vi.stackexchange.com/)
 - [Vim Screencasts](http://vimcasts.org/)
 - [Practical Vim](https://pragprog.com/titles/dnvim2/) (book)
+-->
 
+# Sumber
+
+- `vimtutor` adalah tutorial yang telah terinstall dalam _Vim_ - 
+jika _Vim_ sudah terinstall, kita dapat menjalankan `vimtutor` dari shell.
+- [Vim Adventures](https://vim-adventures.com/) game untuk belajar _Vim_
+- [Vim Tips Wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
+- [Vim Advent Calendar](https://vimways.org/2019/) memiliki banyak tips _Vim_ 
+- [Vim Golf](http://www.vimgolf.com/) mirip [code golf](https://en.wikipedia.org/wiki/Code_golf), 
+Namun bahasa premrograman yang digunakan adalah UI dari _Vim_
+- [Vi/Vim Stack Exchange](https://vi.stackexchange.com/)
+- [Vim Screencasts](http://vimcasts.org/)
+- [Practical Vim](https://pragprog.com/titles/dnvim2/) (buku)
+
+
+<!--
 # Exercises
 
 1. Complete `vimtutor`. Note: it looks best in a
@@ -878,3 +970,37 @@ better way of doing this", there probably is: look it up online.
 1. (Advanced) Convert XML to JSON ([example file](/2020/files/example-data.xml))
    using Vim macros. Try to do this on your own, but you can look at the
    [macros](#macros) section above if you get stuck.
+-->
+
+# Latihan
+
+1. Selesaikan `vimtutor`. Catatan: tampilannya akan terlihat bagus pada 
+   [80x24](https://en.wikipedia.org/wiki/VT100) (80 kolom, 24 baris)
+   terminal window.
+1. Download [basic vimrc](/2020/files/vimrc) dan simpan dalam`~/.vimrc`. Baca 
+   file dengan dokumentasi yang lengkap tersebut (Menggunakan _Vim_!)
+   dan amati bagaimana _Vim_ berubah sedikit dengan konfigurasi baru..
+1. Install dan ubah pengaturan plugin
+   [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim).
+   1. Buat folder plugin menggunakan  `mkdir -p ~/.vim/pack/vendor/start`
+   1. Download plugin: `cd ~/.vim/pack/vendor/start; git clone
+      https://github.com/ctrlpvim/ctrlp.vim`
+   1. Baca 
+      [dokumentasi](https://github.com/ctrlpvim/ctrlp.vim/blob/master/readme.md)
+      plugin yang ingin di install. Jalankan CtrlP untuk mencari file dengan menavigasi
+      direktori project, buka _Vim_, kemudian jalankan `:CtrlP` pada command-line _Vim_.
+    1. Ubah pengaturan CtrlP dengan menambahkan 
+       [konfigurasi](https://github.com/ctrlpvim/ctrlp.vim/blob/master/readme.md#basic-options)
+       pada file `~/.vimrc` untuk membuka CtrlP  dengan menekan Ctrl-P.
+1. Untuk praktek menggunakan _Vim_, jalankan ulang [Demo](#demo) dari tutorial ini
+   dari komputer anda sendiri.
+1. Gunakan Vim untuk semua tugas editing teks anda untuk bulan depan. Jika anda
+   mendapati suatu hal tidak efisien, atau ketika anda berfikir "mungkin ada cara
+   yang lebih baik", anda bisa mencarinya menggunakan Google, kemungkinan besar
+   anda akan menemukannya. Jika anda merasa buntu, anda bisa mengunjungi kami
+   pada jam kerja, atau kirim email pada kami.
+1. Ubah pengaturan tool lain anda menggunakan binding _Vim_ (lihat instruksi diatas)
+1. Ubah lagi pengaturan `~/.vimrc` anda sesaui keinginan, dan tambahkan lagi plugin yang lain.
+1. (Tingkat lanjut), konversi XML ke JSON  ([example file](/2020/files/example-data.xml))
+   menggunakan _macro_ pada _Vim_. Praktikan ini sendiri, namu jika anda buntu
+   anda dapat melihat bagian [macros](#macros) diatas.
