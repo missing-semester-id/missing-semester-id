@@ -10,22 +10,13 @@ video:
 
 # Motivasi
 
-Sebagai ilmuwan komputer, kita tahu bahwa komputer sangat baik dalam membantu kita dalam mengerjakan  
-tugas-tugas yang repetitif. Namun, terlalu sering kita lupa bahwa hal ini berlaku juga pada proses kita dalam menggunakan komputer itu sendiri, prinsip yang sama berjalan saat program-program yang kita buat menjalankan komputasi yang kita inginkan.  
-Kita memiliki pelbagai alat tersedia di ujung jari kita yang memungkinkan kita untuk menjadi lebih produktif  
-dan membantu kita menyelesaikan masalah lain yang lebih kompleks dalam pelbagai aspek yang  
-terkait dengan komputer. Namun, banyak dari kita hanya menggunakan sebagian  
-kecil dari alat-alat tersebut; kita hanya tahu beberapa "mantra ajaib" 
-secara hafalan untuk bisa melewati suatu proses dan dengan buta menyalin serta menempelkan  
+Sebagai ilmuwan komputer, kita tahu bahwa komputer sangat baik dalam membantu kita dalam mengerjakan tugas-tugas yang repetitif. Namun, terlalu sering kita lupa bahwa hal ini berlaku juga pada proses kita dalam menggunakan komputer itu sendiri, prinsip yang sama berjalan saat program-program yang kita buat menjalankan komputasi yang kita inginkan.  
+Kita memiliki pelbagai alat tersedia di ujung jari kita yang memungkinkan kita untuk menjadi lebih produktif dan membantu kita menyelesaikan masalah lain yang lebih kompleks dalam pelbagai aspek yang terkait dengan komputer. Namun, banyak dari kita hanya menggunakan sebagian kecil dari alat-alat tersebut; kita hanya tahu beberapa "mantra ajaib" secara hafalan untuk bisa melewati suatu proses dan dengan buta menyalin serta menempelkan  
 perintah dari internet saat kita mengalami kesulitan.
 
 Kelas ini merupakan jawaban untuk mengatasi hal tersebut.
 
-Kami ingin memandu Anda bagaimana memanfaatkan alat-alat yang telah Anda ketahui,  
-menunjukkan alat-alat baru untuk ditambahkan ke kotak perkakas Anda, dan  
-menanamkan kegembiraan pada Anda untuk bereksplorasi (serta mungkin  
-membangun) lebih banyak alat sendiri. Ini adalah apa yang kita yakini  
-sebagai semester yang terluput dari sebagian besar kurikulum kampus jurusan ilmu Komputer.
+Kami ingin memandu Anda bagaimana memanfaatkan alat-alat yang telah Anda ketahui,  menunjukkan alat-alat baru untuk ditambahkan ke kotak perkakas Anda, dan  menanamkan kegembiraan pada Anda untuk bereksplorasi (serta mungkin membangun) lebih banyak alat sendiri. Ini adalah apa yang kita yakini sebagai semester yang terluput dari sebagian besar kurikulum kampus jurusan ilmu Komputer.
 
 # Struktur Kelas
 
@@ -210,15 +201,13 @@ Jika Anda ingin mendapatkan informasi lebih lanjut tentang argumen, masukan, kel
 missing:~$ man ls
 ```
 
---sampe sini 28/1/2024
 ## Menghubungkan program
 
-Dalam shell, program memiliki dua "aliran" utama yang terkait dengan mereka: aliran masukan dan aliran keluaran. Ketika program mencoba membaca masukan, ia membaca dari aliran masukan, dan ketika mencetak sesuatu, ia mencetak ke aliran keluaran. Biasanya, masukan dan keluaran program adalah terminal Anda. Yaitu keyboard Anda sebagai media masukan dan layar Anda sebagai media keluaran. Namun, kita juga dapat mengalihkan aliran-aliran tersebut!
+Dalam shell, program memiliki dua "aliran" utama yang terkait dengan mereka: aliran masuk dan aliran keluar. Ketika program mencoba membaca masukan, ia membaca dari aliran masukan, dan ketika mencetak sesuatu, ia mencetak ke aliran keluaran. Biasanya, masukan dan keluaran program adalah terminal Anda. Yaitu keyboard Anda sebagai media masukan dan layar Anda sebagai media keluaran. Namun, kita juga dapat mengalihkan aliran-aliran tersebut!
 
-Bentuk paling sederhana dari pengalihan adalah < file dan > file. Ini memungkinkan Anda mengalihkan aliran masukan dan keluaran suatu program ke filenya masing-masing:
+Bentuk paling sederhana dari pengalihan adalah `< file` dan `> file`. Ini memungkinkan Anda mengalihkan aliran masukan dan keluaran suatu program ke filenya masing-masing:
 
-console
-
+```console
 missing:~$ echo hello > hello.txt
 missing:~$ cat hello.txt
 hello
@@ -227,56 +216,57 @@ hello
 missing:~$ cat < hello.txt > hello2.txt
 missing:~$ cat hello2.txt
 hello
+```
 
-Seperti yang ditunjukkan pada contoh di atas, cat adalah program yang menggabungkan berkas (concatenate). Ketika diberikan nama berkas sebagai argumen, ia mencetak isi setiap berkas secara berurutan ke aliran keluarannya. Namun, ketika cat tidak diberikan argumen, ia mencetak konten dari aliran masuk ke aliran keluar (seperti pada contoh ketiga di atas).
+Seperti yang ditunjukkan pada contoh di atas, `cat` adalah program yang menggabungkan berkas (concatenate). Ketika diberikan nama berkas sebagai argumen, ia mencetak isi setiap berkas secara berurutan ke aliran keluarannya. Namun, ketika `cat` tidak diberikan argumen, ia mencetak konten dari aliran masuk ke aliran keluar (seperti pada contoh ketiga di atas).
 
-Anda juga dapat menggunakan >> untuk menambahkan sesuatu ke berkas. Keadaan dimana jenis pengalihan masukan/keluaran ini benar-benar berguna adalah dalam penggunaan pipe. Operator | memungkinkan Anda "menghubungkan" program sehingga keluaran satu program menjadi masukan program lain:
+Anda juga dapat menggunakan `>>` untuk menambahkan sesuatu ke berkas. Keadaan dimana jenis pengalihan masukan/keluaran ini benar-benar berguna adalah dalam penggunaan pipe. Operator `|` memungkinkan Anda "menghubungkan" program sehingga keluaran satu program menjadi masukan program lain:
 
-console
-
+```console
 missing:~$ ls -l / | tail -n1
 drwxr-xr-x 1 root  root  4096 Jun 20  2019 var
 missing:~$ curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=' ' -f2
 219
+```
 
 Selanjutnya, kita akan membahas lebih detail bagaimana memanfaatkan pipe dalam kelas tentang pengelolaan data.
 
 # Alat yang serbaguna dan kuat
 
-Pada sebagian besar sistem yang mirip dengan Unix, ada seorang pengguna yang diistimewakan: pengguna "root". Anda mungkin telah melihatnya dalam daftar berkas di atas. Pengguna root berada di atas (hampir) semua batasan akses, dan dapat membuat, membaca, memperbarui, dan menghapus berkas apa pun dalam sistem. Namun, biasanya Anda tidak akan masuk ke sistem Anda sebagai pengguna root, karena bisa jadi ada implikasi untuk terlalu mudah dalam merusak sesuatu secara tidak sengaja. Sebagai antisipasinya, Anda akan menggunakan perintah sudo. Sesuai namanya, perintah ini memungkinkan Anda "melakukan" sesuatu "sebagai su" (singkatan dari "super user" atau "root"). Ketika Anda mendapatkan pesan kesalahan yang berbentuk Permission denied, hal itu berarti bahwa Anda perlu melakukan sesuatu sebagai root. Meskipun demikian, pastikan terlebih dahulu bahwa Anda benar-benar ingin melakukannya dengan cara itu!
+Pada sebagian besar sistem yang mirip dengan Unix, ada seorang pengguna yang diistimewakan: pengguna "root". Anda mungkin telah melihatnya dalam daftar berkas di atas. Pengguna root berada di atas (hampir) semua batasan akses, dan dapat membuat, membaca, memperbarui, dan menghapus berkas apa pun dalam sistem. Namun, biasanya Anda tidak akan masuk ke sistem Anda sebagai pengguna root, karena bisa jadi ada implikasi untuk terlalu mudah dalam merusak sesuatu secara tidak sengaja. Sebagai antisipasinya, Anda akan menggunakan perintah `sudo`. Sesuai namanya, perintah ini memungkinkan Anda "melakukan" sesuatu "sebagai su" (singkatan dari "super user" atau "root"). Ketika Anda mendapatkan pesan kesalahan yang berbentuk Permission denied, hal itu berarti bahwa Anda perlu melakukan sesuatu sebagai root. Meskipun demikian, pastikan terlebih dahulu bahwa Anda benar-benar ingin melakukannya dengan cara itu!
 
-Satu hal yang perlu Anda lakukan sebagai root adalah menulis ke sistem berkas sysfs yang dipasang di bawah /sys. sysfs mengekspos sejumlah parameter kernel sebagai berkas, sehingga Anda dapat dengan mudah mengkonfigurasi kernel secara langsung tanpa peralatan khusus. Perhatikan, sysfs tidak ada di Windows atau macOS.
+Satu hal yang perlu Anda lakukan sebagai root adalah menulis ke sistem berkas sysfs yang dipasang pada `/sys`. `sysfs` mengekspos sejumlah parameter kernel sebagai berkas, sehingga Anda dapat dengan mudah mengkonfigurasi kernel secara langsung tanpa peralatan khusus. **Perhatikan, sysfs tidak ada di Windows atau macOS.**
 
-Sebagai contoh, kecerahan layar laptop Anda diekspos melalui berkas bernama brightness di bawah
+Sebagai contoh, kecerahan layar laptop Anda diekspos melalui berkas bernama `brightness` pada
 
-arduino
-
+```
 /sys/class/backlight
+```
 
 Dengan menulis nilai ke berkas tersebut, kita dapat mengubah kecerahan layar. Insting pertama Anda mungkin seperti ini:
 
-console
-
+```console
 $ sudo find -L /sys/class/backlight -maxdepth 2 -name '*brightness*'
 /sys/class/backlight/thinkpad_screen/brightness
 $ cd /sys/class/backlight/thinkpad_screen
 $ sudo echo 3 > brightness
-Kesalahan terjadi saat mengalihkan berkas 'brightness'
-buka: Permission denied
+An error occurred while redirecting file 'brightness'
+open: Permission denied
+```
 
-Kesalahan ini mungkin mengejutkan. Bagaimanapun, kita menjalankan perintah dengan menggunakan sudo! Ini adalah hal penting yang perlu diketahui tentang shell. Operasi seperti |, >, dan < dilakukan oleh shell, bukan oleh program individu. `echo` dan kawan-kawannya tidak "tahu" tentang |. Mereka hanya membaca dari masukan mereka dan menulis ke keluaran mereka, apa pun itu. Dalam kasus di atas, shell (yang diotentikasi untuk anda sebagai pengguna) mencoba membuka berkas kecerahan untuk penulisan sebelum menetapkannya sebagai keluaran sudo `echo`, tetapi dicegah karena shell tidak berjalan sebagai root. Dengan pengetahuan ini, kita dapat mengatasinya dengan:
+Kesalahan ini mungkin mengejutkan. Bagaimanapun, kita menjalankan perintah dengan menggunakan `sudo`! Ini adalah hal penting yang perlu diketahui tentang shell. Operasi seperti `|`, `>`, dan `<` dilakukan oleh shell, bukan oleh program individu. `echo` dan kawan-kawannya tidak "tahu" tentang |. Mereka hanya membaca dari masukan mereka dan menulis ke keluaran mereka, apa pun itu. Dalam kasus di atas, _shell_ (yang diotentikasi untuk anda sebagai pengguna) mencoba membuka berkas kecerahan untuk penulisan sebelum menetapkannya sebagai keluaran sudo `echo`, tetapi dicegah karena shell tidak berjalan sebagai root. Dengan pengetahuan ini, kita dapat mengatasinya dengan:
 
-console
-
+```console
 $ echo 3 | sudo tee brightness
+```
 
-Karena program tee yang membuka berkas /sys untuk penulisan, dan itu dijalankan sebagai root, semua izin dapat berfungsi. Anda bisa mengontrol pelbagai hal yang menyenangkan dan berguna melalui /sys, seperti status LED sistem yang berbeda (jalur Anda mungkin berbeda):
+Karena program `tee` yang membuka berkas `/sys` untuk penulisan, dan itu dijalankan sebagai `root`, semua izin dapat berfungsi. Anda bisa mengontrol pelbagai hal yang menyenangkan dan berguna melalui `/sys`, seperti status LED sistem yang berbeda (jalur Anda mungkin berbeda):
 
-console
-
+```console
 $ echo 1 | sudo tee /sys/class/leds/input6::scrolllock/brightness
+```
 
-Langkah selanjutnya
+# Langkah selanjutnya
 
 Pada saat ini, Anda sudah cukup mengenal shell untuk menyelesaikan tugas-tugas dasar. Anda seharusnya dapat menjelajah untuk menemukan berkas-berkas yang menarik dan menggunakan fungsionalitas dasar dari kebanyakan program. Pada kelas berikutnya, kita akan membahas cara melakukan dan mengotomatisasi tugas-tugas yang lebih kompleks menggunakan shell dan banyak program baris perintah yang berguna di luar sana.
 
@@ -285,7 +275,7 @@ Pada saat ini, Anda sudah cukup mengenal shell untuk menyelesaikan tugas-tugas d
 Semua kelas dalam kursus ini disertai dengan serangkaian latihan. Beberapanya berisi tugas spesifik untuk dilakukan, sementara yang lain bersifat umum, seperti "coba gunakan program X dan Y". Kami sangat mendorong Anda untuk mencobanya.
 
 Kami tidak menulis solusi untuk latihan-latihan tersebut. Jika Anda terhambat pada sesuatu, silakan kirimkan email yang menjelaskan apa yang sudah Anda coba kepada kami, dan kami akan mencoba membantu Anda.
--- sampe sini 22/12/23--
+
 
   1. Untuk kursus ini, Anda perlu menggunakan shell Unix seperti Bash atau ZSH. Jika Anda menggunakan Linux atau macOS, Anda tidak perlu melakukan instalasi/persiapan khusus apa pun. Jika Anda menggunakan Windows, pastikan Anda tidak menjalankan cmd.exe atau PowerShell; Anda dapat menggunakan [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) atau mesin virtual Linux untuk menggunakan alat baris perintah gaya Unix. Untuk memastikan bahwa Anda menggunakan shell yang tepat, coba tulis perintah `echo $SHELL`. Jika itu menghasilkan sesuatu seperti `/bin/bash` atau `/usr/bin/zsh`, itu berarti Anda menjalankan program yang benar.
   2. Buat direktori baru bernama missing di bawah /tmp.
@@ -298,7 +288,7 @@ Kami tidak menulis solusi untuk latihan-latihan tersebut. Jika Anda terhambat pa
       curl --head --silent https://missing.csail.mit.edu
       ```
 
-      Baris pertama mungkin sulit untuk dijalankan. Penting untuk diketahui bahwa `#` digunakan untuk memulai sebuah komentar dalam Bash, dan `!` memiliki makna khusus bahkan dalam string berpetik ganda (`"`). Bash memperlakukan string berpetik tunggal (```) secara berbeda: mereka akan berhasil dalam hal ini. Lihat halaman manual Bash tentang quoting untuk informasi lebih lanjut. [quoting](https://www.gnu.org/software/bash/manual/html_node/Quoting.html)
+      Baris pertama mungkin sulit untuk dijalankan. Penting untuk diketahui bahwa `#` digunakan untuk memulai sebuah komentar dalam Bash, dan `!` memiliki makna khusus bahkan dalam string berpetik ganda (`"`). Bash memperlakukan string berpetik tunggal (`` `) secara berbeda: mereka akan berhasil dalam hal ini. Lihat halaman manual Bash tentang quoting untuk informasi lebih lanjut. [quoting](https://www.gnu.org/software/bash/manual/html_node/Quoting.html)
   6. Coba jalankan berkas tersebut, yaitu ketik jalur ke skrip (`./semester`) ke dalam shell Anda dan tekan enter. Pahami mengapa ini tidak berfungsi dengan memeriksa output dari `ls` (petunjuk: lihatlah bit izin berkas).
   7. Jalankan perintah dengan secara eksplisit memulai interpreter `sh`, dan memberikan berkas semester sebagai argumen pertama, yaitu `sh` semester. Mengapa ini berhasil, sedangkan ./semester tidak?
   8. Cari `chmod` (misalnya, gunakan man chmod).
